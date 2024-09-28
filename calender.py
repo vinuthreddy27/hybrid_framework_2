@@ -1,4 +1,6 @@
 from time import sleep
+
+from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
@@ -331,38 +333,173 @@ driver.implicitly_wait(10)
 
 # sleep(2)
 
-driver.get("https://letcode.in/windows")
+# driver.get("https://letcode.in/windows")
+#
+# home_btn=driver.find_element("xpath","//button[.='Open Home Page']")
+# home_btn.click()
+#
+# multi_btn=driver.find_element("id","multi")
+# multi_btn.click()
+#
+# parent_window=driver.current_window_handle
+#
+# handles=driver.window_handles
+#
+# for handle in handles:
+#     driver.switch_to.window(handle)
+#     if driver.title=="LetCode - Testing Hub":
+#         pass
+#     if driver.title=="LetCode with Koushik":
+#         print("ha i am in grand child window")
+#         driver.close()
+#
+# driver.switch_to.window(parent_window)
+# print("i am back again to parent window")
+#
+# sleep(2)
+#
+# driver.get("https://letcode.in/waits")
+#
+# driver.find_element("xpath","//button[.='Simple Alert']").click()
+#
+# wait=WebDriverWait(driver,12,poll_frequency=3)
+# wait.until(expected_conditions.alert_is_present())
+#
+# alert=driver.switch_to.alert
+# print(alert.text)
+# alert.accept()
 
-home_btn=driver.find_element("xpath","//button[.='Open Home Page']")
-home_btn.click()
 
-multi_btn=driver.find_element("id","multi")
-multi_btn.click()
 
-parent_window=driver.current_window_handle
+driver.get("https://letcode.in/radio")
 
-handles=driver.window_handles
+radio_btns=driver.find_elements("xpath","//input[@type='radio']")
 
-for handle in handles:
-    driver.switch_to.window(handle)
-    if driver.title=="LetCode - Testing Hub":
-        pass
-    if driver.title=="LetCode with Koushik":
-        print("ha i am in grand child window")
-        driver.close()
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="yes":
+        btn.click()
 
-driver.switch_to.window(parent_window)
-print("i am back again to parent window")
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="no":
+        btn.click()
 
-sleep(2)
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="one":
+        btn.click()
 
-driver.get("https://letcode.in/waits")
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="two":
+        btn.click()
 
-driver.find_element("xpath","//button[.='Simple Alert']").click()
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="nobug":
+        btn.click()
 
-wait=WebDriverWait(driver,12,poll_frequency=3)
-wait.until(expected_conditions.alert_is_present())
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="bug":
+        btn.click()
 
-alert=driver.switch_to.alert
-print(alert.text)
-alert.accept()
+
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="foo":
+        btn.click()
+
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="notfoo":
+        btn.click()
+
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="going":
+        btn.click()
+
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="notG":
+        btn.click()
+
+for btn in radio_btns:
+    radio_btn=btn.get_attribute("id")
+    if radio_btn=="maybe":
+
+     print(btn.is_enabled())
+
+
+checkbox=driver.find_element("xpath","//label[.='Find if the checkbox is selected?']/..//input[@type='checkbox']")
+print(checkbox.is_selected())
+
+checkbox2=driver.find_element("xpath","//label[.='Accept the T&C']/..//input[@type='checkbox']")
+checkbox2.click()
+
+driver.get("https://letcode.in/dropable")
+
+source_element=driver.find_element("id","draggable")
+target_element=driver.find_element("id","droppable")
+actions=ActionChains(driver)
+
+actions.drag_and_drop(source_element,target_element).perform()
+
+driver.refresh()
+source_element=driver.find_element("id","draggable")
+target_element=driver.find_element("id","droppable")
+
+actions.click_and_hold(source_element).pause(2).move_to_element(target_element).release().perform()
+
+
+driver.get("https://letcode.in/forms")
+# driver.find_element("xpath","//a[.='All in One']").click()
+# driver.find_element("id","firstname").send_keys("vinuth")
+#
+# driver.find_element("id","lasttname").send_keys("reddy")
+#
+# email=driver.find_element("id","email")
+# email.clear()
+# email.send_keys("reddyvinuth27@gmail.com")
+#
+# # select=driver.find_element("xpath","//div[@class='select']")
+# # select.click()
+#
+#
+# driver.find_element("id","Phno").send_keys("7676252914")
+#
+# driver.find_element("id","Addl1").send_keys("Btm layout second stage")
+#
+# driver.find_element("id","Addl2").send_keys("Btm layout second stage,near pvr vega city mall")
+#
+# driver.find_element("id","state").send_keys("Karnataka")
+#
+# driver.find_element("id","postalcode").send_keys("582102")
+
+# driver.find_element("id","male").click()
+
+# selectclass2=driver.find_element("xpath","//select[@fdprocessedid='785r5h']")
+# s1=Select(selectclass2)
+# s1.select_by_visible_text("India")
+#
+# radio_btns=driver.find_elements("xpath","//input[@type='radio']")
+#
+# for btn in radio_btns:
+#     button=btn.get_attribute("id")
+#     if btn.text=="trans":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     button=btn.get_attribute("id")
+#     if btn.text=="female":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     button=btn.get_attribute("id")
+#     if btn.text=="male":
+#         btn.click()
+# sleep(3)
+# date=driver.find_element("id","Date")
+# date.click()

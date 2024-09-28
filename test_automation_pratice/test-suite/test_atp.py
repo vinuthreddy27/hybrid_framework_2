@@ -11,8 +11,8 @@ def test_selenium(driver):
                     "7676252914",
                     "BTM layout Near PVR Vega City Mall",
                     "Nike shoes",
-                    "jyothi",
-                    "jyothi.....",
+                    "chris",
+                    "rogers.....",
                     "vinuth ram reddy")
 
 
