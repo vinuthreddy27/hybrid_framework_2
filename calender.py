@@ -354,4 +354,15 @@ for handle in handles:
 driver.switch_to.window(parent_window)
 print("i am back again to parent window")
 
-sleep(7)
+sleep(2)
+
+driver.get("https://letcode.in/waits")
+
+driver.find_element("xpath","//button[.='Simple Alert']").click()
+
+wait=WebDriverWait(driver,12,poll_frequency=3)
+wait.until(expected_conditions.alert_is_present())
+
+alert=driver.switch_to.alert
+print(alert.text)
+alert.accept()
