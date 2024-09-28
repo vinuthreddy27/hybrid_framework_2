@@ -11,16 +11,9 @@ driver.switch_to.frame("frame-one796456169")
 selectclass_element=driver.find_element("id","RESULT_RadioButton-3")
 s1=Select(selectclass_element)
 all_options=s1.options
-selectclass_element.click()
-sleep(2)
 
 for option in all_options:
     if option.text=="Automation Engineer":
         option.click()
 
-sleep(3)
-
-
-
-
-
+sleep(1)

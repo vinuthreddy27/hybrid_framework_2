@@ -20,12 +20,12 @@ wait.until(expected_conditions.visibility_of_element_located(("id","ui-datepicke
 select_class2=driver.find_element("xpath","//select[@class='ui-datepicker-year']")
 s1=Select(select_class2)
 s1.select_by_visible_text("2014")
-sleep(3)
+sleep(1)
 
 select_class=driver.find_element("xpath","//select[@class='ui-datepicker-month']")
 s1=Select(select_class)
 s1.select_by_visible_text("Dec")
-sleep(3)
+sleep(1)
 
 date=driver.find_element("xpath","//a[.='6']")
 date.click()
@@ -36,30 +36,15 @@ calender4.click()
 month=driver.find_element("xpath","//select[@class='ui-datepicker-month']")
 s1=Select(month)
 s1.select_by_visible_text("Jul")
-sleep(2)
+sleep(1)
 
 year=driver.find_element("xpath","//select[@class='ui-datepicker-year']")
 s1=Select(year)
 s1.select_by_visible_text("2033")
-sleep(2)
+sleep(1)
 
 date=driver.find_element("xpath","//a[.='3']")
 date.click()
-
-calender1=driver.find_element("id","first_date_picker").click()
-
-current_month=driver.find_element("xpath","//span[@class='ui-datepicker-month']").text
-current_year=driver.find_element("xpath","//span[@class='ui-datepicker-year']").text
-
-
-while not(current_month.__eq__("July") and current_year.__eq__("2039")):
-    next_btn=driver.find_element("xpath","//a[@data-handler='next']")
-    next_btn.click()
-
-    current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
-    current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
-
-driver.find_element("xpath","//a[.='3']").click()
 
 
 calender2=driver.find_element("id","second_date_picker").click()
@@ -77,30 +62,6 @@ while not(current_month.__eq__("July") and current_year.__eq__("2029")):
 
 driver.find_element("xpath","//a[.='3']").click()
 
-driver.get("https://testautomationpractice.blogspot.com/")
-
-driver.switch_to.frame("frame-one796456169")
-
-driver.find_element("xpath","//span[@class='icon_calendar']").click()
-sleep(5)
-
-select_class=driver.find_element("xpath","//select[@class='ui-datepicker-year']")
-s1=Select(select_class)
-s1.select_by_visible_text("2034")
-
-
-current_month=driver.find_element("xpath","//span[@class='ui-datepicker-month']").text
-
-while not(current_month.__eq__("November")):
-    next_btn=driver.find_element("xpath","//a[@data-handler='prev']")
-    next_btn.click()
-
-    current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
-
-date=driver.find_element("xpath","//a[.='5']")
-date.click()
-
-sleep(7)
 
 from time import sleep
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -131,7 +92,7 @@ while not(current_month_year.__eq__("August 2026")):
 date=driver.find_element("xpath","//div[.='14']")
 date.click()
 
-sleep(7)
+sleep(1)
 
 from time import sleep
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -155,30 +116,7 @@ driver.find_element("xpath","//div[.='2029']").click()
 
 driver.find_element("xpath","//div[.='20']").click()
 
-sleep(4)
-
-# from selenium.webdriver.chrome.webdriver import WebDriver
-# driver=WebDriver()
-# driver.get("https://www.makemytrip.com/")
-# driver.implicitly_wait(10)
-# driver.maximize_window()
-#
-# driver.find_element("xpath","//span[@data-cy='closeModal']").click()
-#
-# driver.find_element("xpath","//label[@for='departure']").click()
-#
-# current_mon_year=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
-# current_mon_year2=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
-#
-# while not(current_mon_year.__eq__("March2025") and current_mon_year2.__eq__("April2025")):
-#
-#     next_btn=driver.find_element("xpath","//span[@aria-label='Next Month']")
-#     next_btn.click()
-#     current_mon_year=driver.find_element("xpath", "//div[@class='DayPicker-Months']").text
-#     current_mon_year2=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
-#
-# date=driver.find_element("xpath","//div[@class='dateInnerCell']/../..//div[@aria-label='Thu Aug 14 2025']")
-# date.click()
+sleep(1)
 
 
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -202,7 +140,7 @@ while not(current_mon.__eq__("December") and current_yer.__eq__("2027")):
 date=driver.find_element("xpath","//a[.='27']")
 date.click()
 
-sleep(3)
+sleep(1)
 
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
@@ -263,7 +201,7 @@ while not(current_month.__eq__("July") and current_year.__eq__("2023")):
 
 date=driver.find_element("xpath","//a[.='3']")
 date.click()
-sleep(3)
+sleep(1)
 
 datepicker1=driver.find_element("xpath","//input[@class='form-control hasDatepicker']")
 datepicker1.click()
@@ -274,7 +212,7 @@ current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']
 if current_year=="2024" and current_month=="September":
     date = driver.find_element("xpath", "//a[.='28']")
     date.click()
-    sleep(3)
+    sleep(1)
 
 
 datepicker2=driver.find_element("id","datepicker2")
@@ -283,7 +221,7 @@ datepicker2.click()
 month=driver.find_element("xpath","//select[@class='datepick-month-year']")
 s1=Select(month)
 s1.select_by_index(11)
-sleep(2)
+sleep(1)
 
 year=driver.find_element("xpath","//select[@title='Change the year']")
 s1=Select(year)
@@ -292,4 +230,68 @@ s1.select_by_visible_text("2034")
 date=driver.find_element("xpath","//a[@title='Select Sunday, Dec 3, 2034']")
 date.click()
 
-sleep(3)
+sleep(1)
+
+
+'''it fails due to ads'''
+# calender1=driver.find_element("id","first_date_picker").click()
+#
+# current_month=driver.find_element("xpath","//span[@class='ui-datepicker-month']").text
+# current_year=driver.find_element("xpath","//span[@class='ui-datepicker-year']").text
+
+
+# while not(current_month.__eq__("July") and current_year.__eq__("2039")):
+#     next_btn=driver.find_element("xpath","//a[@data-handler='next']")
+#     next_btn.click()
+
+#     current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+#     current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
+
+# driver.find_element("xpath","//a[.='3']").click()
+
+# from selenium.webdriver.chrome.webdriver import WebDriver
+# driver=WebDriver()
+# driver.get("https://www.makemytrip.com/")
+# driver.implicitly_wait(10)
+# driver.maximize_window()
+
+# driver.find_element("xpath","//span[@data-cy='closeModal']").click()
+#
+# driver.find_element("xpath","//label[@for='departure']").click()
+
+# current_mon_year=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
+# current_mon_year2=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
+
+# while not(current_mon_year.__eq__("March2025") and current_mon_year2.__eq__("April2025")):
+
+#     next_btn=driver.find_element("xpath","//span[@aria-label='Next Month']")
+#     next_btn.click()
+#     current_mon_year=driver.find_element("xpath", "//div[@class='DayPicker-Months']").text
+#     current_mon_year2=driver.find_element("xpath","//div[@class='DayPicker-Months']").text
+
+# date=driver.find_element("xpath","//div[@class='dateInnerCell']/../..//div[@aria-label='Thu Aug 14 2025']")
+# date.click()
+
+
+# driver.get("https://testautomationpractice.blogspot.com/")
+
+# driver.switch_to.frame("frame-one796456169")
+
+# driver.find_element("xpath","//span[@class='icon_calendar']").click()
+# sleep(5)
+
+# select_class=driver.find_element("xpath","//select[@class='ui-datepicker-year']")
+# s1=Select(select_class)
+# s1.select_by_visible_text("2034")
+
+# current_month=driver.find_element("xpath","//span[@class='ui-datepicker-month']").text#
+# while not(current_month.__eq__("November")):
+#     next_btn=driver.find_element("xpath","//a[@data-handler='prev']")
+#     next_btn.click()
+
+#     current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+
+# date=driver.find_element("xpath","//a[.='5']")
+# date.click()
+
+# sleep(2)
