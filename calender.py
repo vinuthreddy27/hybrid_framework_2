@@ -222,3 +222,74 @@ wait.until(expected_conditions.alert_is_present())
 
 alert=driver.switch_to.alert
 alert.dismiss()
+
+from time import sleep
+from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.support.select import Select
+
+driver=WebDriver()
+driver.get("https://demo.automationtesting.in/Datepicker.html")
+driver.maximize_window()
+driver.implicitly_wait(10)
+
+datepicker1=driver.find_element("xpath","//input[@class='form-control hasDatepicker']")
+datepicker1.click()
+
+current_month=driver.find_element("xpath","//span[@class='ui-datepicker-month']").text
+current_year=driver.find_element("xpath","//span[@class='ui-datepicker-year']").text
+
+while not(current_month.__eq__("July") and current_year.__eq__("2025")):
+    next_btn=driver.find_element("xpath","//a[@title='Next']")
+    next_btn.click()
+
+    current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+    current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
+
+date=driver.find_element("xpath","//a[.='3']")
+date.click()
+
+datepicker1=driver.find_element("xpath","//input[@class='form-control hasDatepicker']")
+datepicker1.click()
+
+current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
+
+while not(current_month.__eq__("July") and current_year.__eq__("2023")):
+    next_btn=driver.find_element("xpath","//a[@title='Prev']")
+    next_btn.click()
+
+    current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+    current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
+
+date=driver.find_element("xpath","//a[.='3']")
+date.click()
+sleep(3)
+
+datepicker1=driver.find_element("xpath","//input[@class='form-control hasDatepicker']")
+datepicker1.click()
+
+current_month = driver.find_element("xpath", "//span[@class='ui-datepicker-month']").text
+current_year = driver.find_element("xpath", "//span[@class='ui-datepicker-year']").text
+
+if current_year=="2024" and current_month=="September":
+    date = driver.find_element("xpath", "//a[.='28']")
+    date.click()
+    sleep(3)
+
+
+datepicker2=driver.find_element("id","datepicker2")
+datepicker2.click()
+
+month=driver.find_element("xpath","//select[@class='datepick-month-year']")
+s1=Select(month)
+s1.select_by_index(11)
+sleep(2)
+
+year=driver.find_element("xpath","//select[@title='Change the year']")
+s1=Select(year)
+s1.select_by_visible_text("2034")
+
+date=driver.find_element("xpath","//a[@title='Select Sunday, Dec 3, 2034']")
+date.click()
+
+sleep(3)

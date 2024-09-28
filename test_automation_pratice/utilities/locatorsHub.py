@@ -62,7 +62,7 @@ class automation_pratice_page_locators(Base):
 
     origin=("xpath","//div[@class='feed-links']")
 
-
+    size=("xpath","//div[contains(@class,'ui-resizable-handle ui-resizable-se')]")
 
 
 
