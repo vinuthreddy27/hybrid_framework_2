@@ -19,6 +19,7 @@ class automation_pratice_page_locators(Base):
     date_textfield = ("id", "datepicker")
 
     pagination_table = ("xpath", "//td[.='$5.99']/..//input")
+
     search_textfield = ("id", "Wikipedia1_wikipedia-search-input")
     search_btn = ("xpath", "//input[@type='submit']")
 

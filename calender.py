@@ -8,8 +8,42 @@ from selenium.webdriver.support.expected_conditions import visibility_of_element
 driver=WebDriver()
 driver.maximize_window()
 driver.implicitly_wait(10)
-driver.get("https://www.hyrtutorials.com/p/calendar-practice.html")
+driver.get("https://letcode.in/calendar")
 
+# month=driver.find_element("xpath","//div[@class='datepicker-nav-month']").text
+# year=driver.find_element("xpath","//div[@class='datepicker-nav-year']").text
+#
+# while not(month.__eq__("November") and year.__eq__("2025")):
+#     next_btn=driver.find_element("xpath","(//button[@class='datepicker-nav-next button is-small is-text'])[1]")
+#     next_btn.click()
+#     month = driver.find_element("xpath", "//div[@class='datepicker-nav-month']").text
+#     year = driver.find_element("xpath", "//div[@class='datepicker-nav-year']").text
+#
+# date=driver.find_element("xpath","//button[.='25']")
+# date.click()
+# sleep(1)
+
+driver.find_element("xpath","//input[@class='datetimepicker-dummy-input is-datetimepicker-range']").click()
+
+month=driver.find_element("xpath","//div[@class='datepicker-nav-month']").text
+year=driver.find_element("xpath","//div[@class='datepicker-nav-year']").text
+
+while not(month.__eq__("May") and year.__eq__("2023")):
+    prev_btn=driver.find_element("xpath","(//button[@class='datepicker-nav-previous button is-small is-text'])[2]")
+    prev_btn.click()
+
+    month = driver.find_element("xpath", "//div[@class='datepicker-nav-month-year']").text
+
+
+date=driver.find_element("xpath","//button[.='12']")
+date.click()
+sleep(1)
+
+
+
+
+
+driver.get("https://www.hyrtutorials.com/p/calendar-practice.html")
 
 calender3=driver.find_element("id","third_date_picker")
 calender3.click()
@@ -249,6 +283,7 @@ sleep(1)
 
 # driver.find_element("xpath","//a[.='3']").click()
 
+'''mulitple year and month'''
 # from selenium.webdriver.chrome.webdriver import WebDriver
 # driver=WebDriver()
 # driver.get("https://www.makemytrip.com/")
@@ -272,7 +307,7 @@ sleep(1)
 # date=driver.find_element("xpath","//div[@class='dateInnerCell']/../..//div[@aria-label='Thu Aug 14 2025']")
 # date.click()
 
-
+'''they have removed this locaters'''
 # driver.get("https://testautomationpractice.blogspot.com/")
 
 # driver.switch_to.frame("frame-one796456169")
