@@ -1,11 +1,10 @@
 # from time import sleep
-#
 # from selenium.webdriver.chrome.webdriver import WebDriver
 # from selenium.webdriver.support.select import Select
 
 # driver=WebDriver()
 # driver.maximize_window()
-#
+# driver.get("https://testautomationpractice.blogspot.com/")
 # driver.switch_to.frame("frame-one796456169")
 # selectclass_element=driver.find_element("id","RESULT_RadioButton-3")
 # s1=Select(selectclass_element)
@@ -14,17 +13,37 @@
 # for option in all_options:
 #     if option.text=="Automation Engineer":
 #         option.click()
-#
-# sleep(1)get("https://testautomationpractice.blogspot.com/")
+
+# sleep(1))
 
 
 from time import sleep
+
+from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
 driver=WebDriver()
 driver.get("file:///C:/Users/swath/Downloads/demo%20(1).html")
 driver.maximize_window()
 driver.implicitly_wait(10)
+
+actions=ActionChains(driver)
+element=driver.find_element("xpath","//th[.='Percentage']")
+actions.scroll_to_element(element).perform()
+sleep(5)
+actions.scroll_by_amount(0,100).perform()
+sleep(2)
+actions.scroll_by_amount(0,200).perform()
+sleep(2)
+actions.scroll_by_amount(0,300).perform()
+sleep(2)
+actions.scroll_by_amount(0,400).perform()
+sleep(2)
+actions.scroll_by_amount(0,500).perform()
+sleep(2)
+actions.scroll_by_amount(0,600).perform()
+sleep(3)
+
 
 select=driver.find_element("id","multiple_cars")
 s3=Select(select)
@@ -58,21 +77,21 @@ file_upload.send_keys("C:/Users/swath/Downloads/Student Athlete Resume.pdf")
 sleep(1)
 
 
-# elements=driver.find_elements("xpath","//a")
-#
-# for element in elements:
-#     element.click()
-#
-# parent_window=driver.current_window_handle
-#
-# for handle in driver.window_handles:
-#     driver.switch_to.window(handle)
-#     if driver.title=="Demo Web Shop":
-#         pass
-#     driver.find_element("xpath","//a[.='Log in']").click()
-#
-#
-# sleep(3)
-# driver.switch_to.window(parent_window)
-#
-# sleep(2)
+elements=driver.find_elements("xpath","//a")
+
+for element in elements:
+    element.click()
+
+parent_window=driver.current_window_handle
+
+for handle in driver.window_handles:
+    driver.switch_to.window(handle)
+    if driver.title=="Demo Web Shop":
+        pass
+    driver.find_element("xpath","//a[.='Log in']").click()
+
+
+sleep(3)
+driver.switch_to.window(parent_window)
+
+sleep(2)

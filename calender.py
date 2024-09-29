@@ -1,5 +1,4 @@
 from time import sleep
-
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions
@@ -178,15 +177,15 @@ from selenium.webdriver.support.expected_conditions import visibility_of_element
 #
 # sleep(1)
 #
-# from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.webdriver import WebDriver
 # from selenium.webdriver.support import expected_conditions
 # from selenium.webdriver.support.expected_conditions import alert_is_present
 # from selenium.webdriver.support.wait import WebDriverWait
 #
-# driver=WebDriver()
+driver=WebDriver()
 # driver.get("http://seleniumpractise.blogspot.com/")
-# driver.maximize_window()
-# driver.implicitly_wait(10)
+driver.maximize_window()
+driver.implicitly_wait(10)
 #
 # alert=driver.find_element("xpath","//button[.='Try it']")
 # alert.click()
@@ -454,7 +453,7 @@ from selenium.webdriver.support.expected_conditions import visibility_of_element
 # actions.click_and_hold(source_element).pause(2).move_to_element(target_element).release().perform()
 
 
-# driver.get("https://letcode.in/forms")
+driver.get("https://letcode.in/forms")
 # driver.find_element("xpath","//a[.='All in One']").click()
 # driver.find_element("id","firstname").send_keys("vinuth")
 #
@@ -478,14 +477,20 @@ from selenium.webdriver.support.expected_conditions import visibility_of_element
 #
 # driver.find_element("id","postalcode").send_keys("582102")
 
-# driver.find_element("id","male").click()
 
-# selectclass2=driver.find_element("xpath","//select[@fdprocessedid='785r5h']")
-# s1=Select(selectclass2)
-# s1.select_by_visible_text("India")
+# radio_btn=driver.find_element("id","male")
+# radio_btn.click()
+# print(radio_btn.is_selected())
 #
-# radio_btns=driver.find_elements("xpath","//input[@type='radio']")
+# radio_btn=driver.find_element("id","female")
+# radio_btn.click()
+# print(radio_btn.is_selected())
 #
+# radio_btn=driver.find_element("id","trans")
+# radio_btn.click()
+# print(radio_btn.is_selected())
+
+
 # for btn in radio_btns:
 #     button=btn.get_attribute("id")
 #     if btn.text=="trans":
@@ -496,26 +501,22 @@ from selenium.webdriver.support.expected_conditions import visibility_of_element
 #     if btn.text=="female":
 #         btn.click()
 #
-# for btn in radio_btns:
-#     button=btn.get_attribute("id")
-#     if btn.text=="male":
-#         btn.click()
-# sleep(3)
+
 # date=driver.find_element("id","Date")
 # date.click()
 
-from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.chrome.options import Options
-driver=WebDriver()
-chrome_options=Options()
-chrome_options.add_experimental_option("prefs",{"download.default_directory":r"C:\Users\swath\OneDrive\Desktop\py_sl"})
-driver.get("https://letcode.in/file")
-driver.maximize_window()
-driver.implicitly_wait(10)
-
-file=driver.find_element("name","resume")
-file.send_keys("C:/Users/swath/Downloads/Student Athlete Resume.pdf")
-sleep(5)
+# from selenium.webdriver.chrome.webdriver import WebDriver
+# from selenium.webdriver.chrome.options import Options
+# driver=WebDriver()
+# chrome_options=Options()
+# chrome_options.add_experimental_option("prefs",{"download.default_directory":r"C:\Users\swath\OneDrive\Desktop\py_sl"})
+# driver.get("https://letcode.in/file")
+# driver.maximize_window()
+# driver.implicitly_wait(10)
+#
+# file=driver.find_element("name","resume")
+# file.send_keys("C:/Users/swath/Downloads/Student Athlete Resume.pdf")
+# sleep(5)
 
 # buttons=driver.find_elements("xpath","//button[@class='button']")
 # for button in buttons:
