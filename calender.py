@@ -7,9 +7,9 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located
 
-driver=WebDriver()
-driver.maximize_window()
-driver.implicitly_wait(10)
+# driver=WebDriver()
+# driver.maximize_window()
+# driver.implicitly_wait(10)
 # driver.get("https://letcode.in/calendar")
 #
 # month=driver.find_element("xpath","//div[@class='datepicker-nav-month']").text
@@ -371,90 +371,90 @@ driver.implicitly_wait(10)
 
 
 
-driver.get("https://letcode.in/radio")
+# driver.get("https://letcode.in/radio")
+#
+# radio_btns=driver.find_elements("xpath","//input[@type='radio']")
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="yes":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="no":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="one":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="two":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="nobug":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="bug":
+#         btn.click()
+#
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="foo":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="notfoo":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="going":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="notG":
+#         btn.click()
+#
+# for btn in radio_btns:
+#     radio_btn=btn.get_attribute("id")
+#     if radio_btn=="maybe":
+#
+#      print(btn.is_enabled())
+#
+#
+# checkbox=driver.find_element("xpath","//label[.='Find if the checkbox is selected?']/..//input[@type='checkbox']")
+# print(checkbox.is_selected())
+#
+# checkbox2=driver.find_element("xpath","//label[.='Accept the T&C']/..//input[@type='checkbox']")
+# checkbox2.click()
+#
+# driver.get("https://letcode.in/dropable")
+#
+# source_element=driver.find_element("id","draggable")
+# target_element=driver.find_element("id","droppable")
+# actions=ActionChains(driver)
+#
+# actions.drag_and_drop(source_element,target_element).perform()
+#
+# driver.refresh()
+# source_element=driver.find_element("id","draggable")
+# target_element=driver.find_element("id","droppable")
+#
+# actions.click_and_hold(source_element).pause(2).move_to_element(target_element).release().perform()
 
-radio_btns=driver.find_elements("xpath","//input[@type='radio']")
 
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="yes":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="no":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="one":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="two":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="nobug":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="bug":
-        btn.click()
-
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="foo":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="notfoo":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="going":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="notG":
-        btn.click()
-
-for btn in radio_btns:
-    radio_btn=btn.get_attribute("id")
-    if radio_btn=="maybe":
-
-     print(btn.is_enabled())
-
-
-checkbox=driver.find_element("xpath","//label[.='Find if the checkbox is selected?']/..//input[@type='checkbox']")
-print(checkbox.is_selected())
-
-checkbox2=driver.find_element("xpath","//label[.='Accept the T&C']/..//input[@type='checkbox']")
-checkbox2.click()
-
-driver.get("https://letcode.in/dropable")
-
-source_element=driver.find_element("id","draggable")
-target_element=driver.find_element("id","droppable")
-actions=ActionChains(driver)
-
-actions.drag_and_drop(source_element,target_element).perform()
-
-driver.refresh()
-source_element=driver.find_element("id","draggable")
-target_element=driver.find_element("id","droppable")
-
-actions.click_and_hold(source_element).pause(2).move_to_element(target_element).release().perform()
-
-
-driver.get("https://letcode.in/forms")
+# driver.get("https://letcode.in/forms")
 # driver.find_element("xpath","//a[.='All in One']").click()
 # driver.find_element("id","firstname").send_keys("vinuth")
 #
@@ -503,3 +503,53 @@ driver.get("https://letcode.in/forms")
 # sleep(3)
 # date=driver.find_element("id","Date")
 # date.click()
+
+from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.options import Options
+driver=WebDriver()
+chrome_options=Options()
+chrome_options.add_experimental_option("prefs",{"download.default_directory":r"C:\Users\swath\OneDrive\Desktop\py_sl"})
+driver.get("https://letcode.in/file")
+driver.maximize_window()
+driver.implicitly_wait(10)
+
+file=driver.find_element("name","resume")
+file.send_keys("C:/Users/swath/Downloads/Student Athlete Resume.pdf")
+sleep(5)
+
+# buttons=driver.find_elements("xpath","//button[@class='button']")
+# for button in buttons:
+#     download=button.get_attribute("download")
+#     if download=="sample.xlsx":
+#         button.click()
+
+# download=driver.find_element("id","xls")
+# download.click()
+# sleep(2)
+# downoad2=driver.find_element("id","pdf")
+# downoad2.click()
+# sleep(2)
+# downoad3=driver.find_element("id","txt")
+# downoad3.click()
+# sleep(2)
+
+
+# driver.get("https://letcode.in/draggable")
+# source_element=driver.find_element("id","sample-box")
+# actions=ActionChains(driver)
+# actions.drag_and_drop_by_offset(source_element,50,0).perform()
+# sleep(3)
+
+# driver.get("https://letcode.in/frame")
+#
+# driver.switch_to.frame("firstFr")
+# driver.find_element("name","fname").send_keys("vinuth")
+# driver.find_element("name","lname").send_keys("reddy")
+#
+# # driver.switch_to.default_content()
+#
+# inner_frame=driver.find_element("xpath","//iframe[@class='has-background-white']")
+# driver.switch_to.frame(inner_frame)
+#
+# driver.find_element("name","email").send_keys("reddyvinuth27@gmail.com")
+# sleep(4)
