@@ -1,7 +1,5 @@
 from selenium.webdriver import ActionChains
-
 from test_automation_pratice.POM.atp_page import Selenium
-
 
 
 def test_selenium(driver):
