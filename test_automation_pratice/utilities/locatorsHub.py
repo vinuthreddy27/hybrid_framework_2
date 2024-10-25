@@ -1,20 +1,40 @@
 from test_automation_pratice.Library.lib import Base
 
 class automation_pratice_page_locators(Base):
+
     name_textfield = ("id", "name")
     email_textfield = ("id", "email")
     phone_textfield = ("id", "phone")
     address_textarea = ("id", "textarea")
     male_radiobtn = ("id", "male")
-    day_radiobtn = ("id", "tuesday")
+    female_radiobtn = ("id", "female")
     country_dropdown = ("id", "country")
     option_locator_1=("xpath","//option[.='India']")
 
+    check_box=("id","sunday")
+    check_box2=("id","monday")
+    check_box3=("id","tuesday")
+    check_box4=("id","wednesday")
+    check_box5=("id","thursday")
+    check_box6=("id","friday")
+    check_box7=("id","saturday")
+
+    file_upload=("id","singleFileInput")
+    file_upload2=("id","multipleFilesInput")
+
+
+    name=("name","input1")
+    name2=("name", "input2")
+    name3= ("name", "input3")
+
+    btn=("id","btn1")
+    btn2= ("id", "btn1")
+    btn3= ("id", "btn1")
+
+    hover=("xpath","//button[.='Point Me']")
+
     select_locator = ("id", "colors")
-    option_locator = ("xpath", "//option[.='Yellow']")
-    option_locator_c1 = ("xpath", "//option[.='Green']")
-    option_locator_c2 = ("xpath", "//option[.='Blue']")
-    option_locator_c3= ("xpath", "//option[.='Red']")
+
 
     date_textfield = ("id", "datepicker")
 

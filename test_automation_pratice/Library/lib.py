@@ -2,6 +2,8 @@ from time import sleep
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.chrome.webdriver import WebDriver
 
+
+
 class Base:
 
     def __init__(self,driver,ActionChains):
@@ -29,11 +31,10 @@ class Base:
         element.send_keys(text)
 
     '''Select class'''
-    def select_a_option(self,locator1,locator2):
+    def select_a_option(self,locator1,text):
         select_element=self.search_for_element(locator1)
         s1=Select(select_element)
-        element=self.search_for_element(locator2)
-        s1.select_by_visible_text(element.text)
+        s1.select_by_visible_text(text)
 
     '''alerts'''
     def accept_alert(self):
@@ -162,9 +163,17 @@ class Base:
         date.click()
 
 
+    def selection_of_date(self):
+        self.driver.find_element("id","txtDate").click()
+        select_class=self.driver.find_element("class name","ui-datepicker-month")
+        s1=Select(select_class)
+        s1.select_by_visible_text("Jul")
 
+        selectclass=self.driver.find_element("class name","ui-datepicker-year")
+        s2=Select(selectclass)
+        s2.select_by_index(17)
 
-
-
+        date=self.driver.find_element("xpath","//a[.='3']")
+        date.click()
 
 

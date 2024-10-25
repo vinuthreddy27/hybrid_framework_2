@@ -13,7 +13,20 @@ def test_selenium(driver):
                     "Nike shoes",
                     "chris",
                     "rogers.....",
-                    "vinuth ram reddy")
+                    "vinuth ram reddy",
+                    "C:/Users/swath/Downloads/download (1).jpeg",
+                    "C:/Users/swathDownloads/demo (1).html",
+                    "C:/Users/swath/Downloads/download (1).jpeg",
+                    "vinuth",
+                    "reddy","ram"
+                    ,"Red",
+                    "Blue",
+                    "White",
+                    "Green",
+                    "India",
+                    "Red",
+                    "Green",
+                    "Yellow")
 
 
 
